@@ -56,3 +56,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'lograge'
+
+gem 'bootstrap-sass', '~> 3.3.6'

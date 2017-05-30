@@ -1,0 +1,17 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <%= link_to "Streak", root_path, class: "navbar-brand" %>
+    </div>
+
+    <ul class="nav navbar-nav navbar-right">
+      <% if current_user %>
+      <li><a href="#"><%= current_user.name %></a></li>
+      <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+      <% else %>
+      <li><%= link_to "Features", features_path %></li>
+      <li><%= link_to "Sign in", "/auth/facebook", id: "sign_in" %></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

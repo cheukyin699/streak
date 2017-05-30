@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root 'index#index'
+  root 'pages#show', page: 'home'
+
+  # Handling them static pages
+  get '/features' => 'pages#show', page: 'features', as: 'features'
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]
