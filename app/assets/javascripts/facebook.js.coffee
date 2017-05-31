@@ -2,9 +2,9 @@ jQuery ->
     $('body').prepend('<div id="fb-root"></div>')
 
     $.ajax
-        url: '#{window.location.protocol}//connect.facebook.net/en_US/all.js'
-        dataType: 'script'
-        cache: true
+    url: '#{window.location.protocol}//connect.facebook.net/en_US/all.js'
+    dataType: 'script'
+    cache: true
 
     window.fbAsyncInit = ->
         FB.init(appId: '121987538341529', cookie: true)
@@ -14,7 +14,7 @@ jQuery ->
             FB.login (response) ->
                 window.location = '/auth/facebook/callback' if response.authResponse
 
-        $('#sign_out').click (e) ->
-            FB.getLoginStatus (response) ->
-                FB.logout() if response.authResponse
-            true
+                $('#sign_out').click (e) ->
+                    FB.getLoginStatus (response) ->
+                        FB.logout() if response.authResponse
+                        true
